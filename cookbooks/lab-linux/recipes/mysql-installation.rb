@@ -34,8 +34,10 @@ file '/home/ubuntu/Jdbc.java' do
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","jyoti" );
             Statement st=con.createStatement();
             ResultSet rs= st.executeQuery("select id,name from student");
-            System.out.println("id are\n" + Integer.toString(rs.getInt("id")) + " "+ rs.getString("name"));
-
+            // System.out.println("id are\n" + Integer.toString(rs.getInt("id")) + " "+ rs.getString("name"));
+            while(rs.next()){
+                System.out.println("id are\n" + Integer.toString(rs.getInt("id")) + " "+ rs.getString("name"));
+            }
         }
     }'
 end
