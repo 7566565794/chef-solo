@@ -1,4 +1,4 @@
 {
-	"run_list": "recipe[lab-linux::apache_tomcat]"
+	"run_list": "recipe[lab-linux::mysql-installation]"
 	
 }
