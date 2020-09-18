@@ -19,6 +19,6 @@ apt_update 'update' do
     action :update
 end
 
-package "libmysql-java" do 
+package "libmysql-java_5.1.45-1_all" do 
     action :install 
 end
