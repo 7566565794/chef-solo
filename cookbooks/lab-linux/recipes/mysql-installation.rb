@@ -19,6 +19,22 @@ apt_update 'update' do
     action :update
 end
 
-package "libslf4j-java" do 
+package "libmysql-java" do 
     action :install 
+end
+
+file '/home/ubuntu/Jdbc.java' do
+    content 'import java.sql.*;
+    import java.net.*;
+    import java.util.*;
+    class Jdbc{
+        public static void main(String a[]) throws Exception
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/emp","root","Your AWS Password" );
+            Statement st=con.createStatement();
+            ResultSet rs= st.executeQuery("select eid,ename from employee");
+            System.out.println("Employees are\n" + Integer.toString(rs.getInt(1)) + " "+ rs.getString(2));
+        }
+    }'
 end
