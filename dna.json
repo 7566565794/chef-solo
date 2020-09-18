@@ -1,4 +1,4 @@
 {
-	"run_list": "recipe[lab-linux::apache-tomcat]"
+	"run_list": "recipe[lab-linux::apache]"
 	
 }
