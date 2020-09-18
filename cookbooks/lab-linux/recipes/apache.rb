@@ -16,13 +16,13 @@ file "var/www/html/hello.html" do
             </html>"
 end
 
-template "/etc/apache2/apache2.conf" do
-    action :create_if_missing
-    source "sample.erb"
-    owner "root"
-    group "root"
-    mode "644"
-    variables :hostname => node["fqdn"]
-  end
+# template "/etc/apache2/apache2.conf" do
+#     action :create_if_missing
+#     source "sample.erb"
+#     owner "root"
+#     group "root"
+#     mode "644"
+#     variables :hostname => node["fqdn"]
+#   end
 
   
