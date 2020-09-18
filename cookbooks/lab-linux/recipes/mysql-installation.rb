@@ -3,6 +3,11 @@
 # Recipe:: default
 #
 # Copyright:: 2020, The Authors, All Rights Reserved.
+
+execute "apt-get-update" do
+    command "apt-get update"
+end
+
 packages = ["mysql-server" , "mysql-client" , "libmysql-java"]
 packages.each do |i|
     package i do
