@@ -31,10 +31,10 @@ file '/home/ubuntu/Jdbc.java' do
         public static void main(String a[]) throws Exception
         {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/emp","root","Your AWS Password" );
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","jyoti" );
             Statement st=con.createStatement();
-            ResultSet rs= st.executeQuery("select eid,ename from employee");
-            System.out.println("Employees are\n" + Integer.toString(rs.getInt(1)) + " "+ rs.getString(2));
+            ResultSet rs= st.executeQuery("select id,name from student");
+            System.out.println("id are\n" + Integer.toString(rs.getInt("id")) + " "+ rs.getString("name"));
         }
     }'
 end
