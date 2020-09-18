@@ -35,6 +35,7 @@ file '/home/ubuntu/Jdbc.java' do
             Statement st=con.createStatement();
             ResultSet rs= st.executeQuery("select id,name from student");
             System.out.println("id are\n" + Integer.toString(rs.getInt("id")) + " "+ rs.getString("name"));
+
         }
     }'
 end
