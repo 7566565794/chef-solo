@@ -8,5 +8,5 @@ user "jyoti" do
     uid 2000 
     home '/home/jyoti'
     shell '/bin/bash'
-    password abc@123
+    password abc123
 end
