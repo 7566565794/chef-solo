@@ -22,6 +22,11 @@ cookbook_file '/etc/apache2/sites-available/default-ssl.conf' do
     notifies :restart , 'service[apache2]'
 end
 
+cookbook_file '/var/www/html/welcome.html' do
+    source 'welcome.html'
+    notifies :restart , 'service[apache2]'
+end
+
 file "var/www/html/hello.html" do
     content "<html>
                 <head></head>
