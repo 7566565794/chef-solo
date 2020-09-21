@@ -1,4 +1,5 @@
 {
     "id" : "jyoti",
-    "password" : "root"
+    "password" : "root",
+    "comment":"hii.. this is the demo user"
 }
