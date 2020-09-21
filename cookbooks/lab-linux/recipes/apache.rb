@@ -6,15 +6,22 @@ end
 service "apache2" do
     action [:enable, :start]
 end
-=begin
-template "/etc/apache2/" do
-    source "apache.conf.erb"
-    owner : "root"
-    group : "root"
-    mode : "0644"
-    notifies : restart, "service[apache2]"
+
+cookbook_file '/etc/apache2/ports.conf' do
+    source 'port.conf'
+    notifies :restart , 'service[apache2]'
 end
-=end
+
+cookbook_file '/etc/apache2/sites-available/000-default.conf' do
+    source '000-default.conf'
+    notifies :restart , 'service[apache2]'
+end
+
+cookbook_file '/etc/apache2/sites-available/default-ssl.conf' do
+    source 'default-ssl.conf'
+    notifies :restart , 'service[apache2]'
+end
+
 file "var/www/html/hello.html" do
     content "<html>
                 <head></head>
